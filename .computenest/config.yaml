@@ -11,13 +11,41 @@ Service:
           Url: ros_templates/template.yaml
           PredefinedParameters: []
           AllowedRegions:
-            - ap-southeast-1
+          - cn-qingdao
+          - cn-beijing
+          - cn-zhangjiakou
+          - cn-huhehaote
+          - cn-wulanchabu
+          - cn-hangzhou
+          - cn-shanghai
+          - cn-shenzhen
+          - cn-heyuan
+          - cn-guangzhou
+          - cn-chengdu
+          - cn-hongkong
+          - ap-northeast-1
+          - ap-southeast-1
+          - us-east-1
     TemplateConfigs:
       - Name: 单机版
         Url: ros_templates/template.yaml
         PredefinedParameters: []
         AllowedRegions:
+          - cn-qingdao
+          - cn-beijing
+          - cn-zhangjiakou
+          - cn-huhehaote
+          - cn-wulanchabu
+          - cn-hangzhou
+          - cn-shanghai
+          - cn-shenzhen
+          - cn-heyuan
+          - cn-guangzhou
+          - cn-chengdu
+          - cn-hongkong
+          - ap-northeast-1
           - ap-southeast-1
+          - us-east-1
     NetworkMetadata:
       EnablePrivateVpcConnection: false
       EnableReversePrivateVpcConnection: false
@@ -40,10 +68,24 @@ Service:
 Artifact:
   EcsImage:
     ArtifactType: EcsImage
-    ArtifactName: LabelStudio
-    Description: LabelStudio
+    ArtifactName: copaw
+    Description: copaw
     SupportRegionIds:
-        - ap-southeast-1
+      - cn-qingdao
+      - cn-beijing
+      - cn-zhangjiakou
+      - cn-huhehaote
+      - cn-wulanchabu
+      - cn-hangzhou
+      - cn-shanghai
+      - cn-shenzhen
+      - cn-heyuan
+      - cn-guangzhou
+      - cn-chengdu
+      - cn-hongkong
+      - ap-northeast-1
+      - ap-southeast-1
+      - us-east-1
     ArtifactBuildProperty:
       CodeRepo:
         Platform: github
@@ -68,9 +110,9 @@ Artifact:
         # Get the code
         docker run -d \
           --name copaw-app \
-          -p 7860:7860 \
+          -p 8088:8088 \
           --restart unless-stopped \
-          agentscope-registry.ap-southeast-1.cr.aliyuncs.com/agentscope/copaw:0.0.2b2post3-ms
+          agentscope-registry.ap-southeast-1.cr.aliyuncs.com/agentscope/copaw:latest
 
 
         set -euo pipefail  # 安全模式：出错即停、未定义变量报错、管道失败捕获
@@ -247,10 +289,43 @@ Artifact:
         # 同步磁盘
         sync; sync; sync
 
-        # ========================
-        # 6. 自删除（最后一步）
-        # ========================
-        echo ">>> 清理完成，删除脚本自身..."
-        rm -- "$0" 2>/dev/null || true
-
-        echo "✅ 系统清理与安全加固已完成！"
+Outputs:
+  LabelStudio Private Addresses:
+    Condition: EnablePublicIpConditions
+    Description:
+      zh-cn: LabelStudio 内网地址
+      en: LabelStudio Private Addresses
+    Value:
+      Fn::Sub:
+        - 'http://${ServerAddress}:8080'
+        - ServerAddress:
+            Fn::Select:
+              - 0
+              - Fn::GetAtt:
+                  - InstanceGroup
+                  - PrivateIps
+Metadata:
+  ALIYUN::ROS::Interface:
+    Hidden:
+      - EnablePublicIp
+    ParameterGroups:
+      - Parameters:
+          - PayType
+          - PayPeriodUnit
+          - PayPeriod
+        Label:
+          default: 付费类型配置
+      - Parameters:
+          - EcsInstanceType
+          - InstancePassword
+        Label:
+          default: 资源配置
+      - Parameters:
+          - ZoneId
+          - VpcOption
+          - VpcId
+          - VSwitchId
+          - VpcCidrBlock
+          - VSwitchCidrBlock
+        Label:
+          default: 可用区配置

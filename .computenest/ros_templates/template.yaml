@@ -143,26 +143,6 @@ Parameters:
         InstanceTypeFamily:
           - ecs.u1
           - ecs.e
-    AllowedValues:
-      - ecs.u1-c1m2.xlarge
-      - ecs.u1-c1m4.xlarge
-      - ecs.u1-c1m8.xlarge
-      - ecs.u1-c1m1.2xlarge
-      - ecs.u1-c1m2.2xlarge
-      - ecs.u1-c1m4.2xlarge
-      - ecs.u1-c1m8.2xlarge
-      - ecs.u1-c1m1.3xlarge
-      - ecs.u1-c1m2.3xlarge
-      - ecs.u1-c1m4.3xlarge
-      - ecs.u1-c1m8.3xlarge
-      - ecs.u1-c1m1.4xlarge
-      - ecs.u1-c1m2.4xlarge
-      - ecs.u1-c1m4.4xlarge
-      - ecs.u1-c1m8.4xlarge
-      - ecs.u1-c1m1.8xlarge
-      - ecs.u1-c1m2.8xlarge
-      - ecs.u1-c1m4.8xlarge
-      - ecs.u1-c1m8.8xlarge
   InstancePassword:
     NoEcho: true
     Type: String
@@ -184,7 +164,7 @@ Parameters:
     Label:
       en: Whether Enable Public IP
       zh-cn: 是否开启公网IP
-    Default: true
+    Default: false
   ZoneId:
     Type: String
     Label:
@@ -268,7 +248,7 @@ Resources:
           SourceCidrIp: 0.0.0.0/0
           IpProtocol: tcp
           NicType: internet
-        - PortRange: 8000/8080
+        - PortRange: 8088/8088
           Priority: 1
           SourceCidrIp: 0.0.0.0/0
           IpProtocol: tcp
@@ -304,43 +284,19 @@ Resources:
         Ref: EcsInstanceType
       SystemDiskCategory: cloud_essd
       SystemDiskSize: 200
-      InternetMaxBandwidthOut:
-        Fn::If:
-          - EnablePublicIpConditions
-          - 5
-          - 0
+      InternetMaxBandwidthOut: 3
       IoOptimized: optimized
       MaxAmount: 1
 
 Outputs:
-  LabelStudio Addresses:
-    Description:
-      zh-cn: LabelStudio 地址
-      en: LabelStudio Addresses
-    Value:
-      Fn::Sub:
-        - 'http://${ServerAddress}:8080'
-        - ServerAddress:
-            Fn::If:
-              - EnablePublicIpConditions
-              - Fn::Select:
-                - 0
-                - Fn::GetAtt:
-                  - InstanceGroup
-                  - PublicIps
-              - Fn::Select:
-                - 0
-                - Fn::GetAtt:
-                  - InstanceGroup
-                  - PrivateIps
-  LabelStudio Private Addresses:
+  CoPaw Private Addresses:
     Condition: EnablePublicIpConditions
     Description:
-      zh-cn: LabelStudio 内网地址
-      en: LabelStudio Private Addresses
+      zh-cn: CoPaw 内网地址
+      en: CoPaw Private Addresses
     Value:
       Fn::Sub:
-        - 'http://${ServerAddress}:8080'
+        - 'http://${ServerAddress}:8088'
         - ServerAddress:
             Fn::Select:
               - 0
@@ -349,6 +305,8 @@ Outputs:
                   - PrivateIps
 Metadata:
   ALIYUN::ROS::Interface:
+    Hidden:
+      - EnablePublicIp
     ParameterGroups:
       - Parameters:
           - PayType
@@ -359,7 +317,6 @@ Metadata:
       - Parameters:
           - EcsInstanceType
           - InstancePassword
-          - EnablePublicIp
         Label:
           default: 资源配置
       - Parameters:
