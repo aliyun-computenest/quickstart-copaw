@@ -164,7 +164,7 @@ Parameters:
     Label:
       en: Whether Enable Public IP
       zh-cn: 是否开启公网IP
-    Default: false
+    Default: true
   ZoneId:
     Type: String
     Label:

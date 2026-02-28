@@ -90,7 +90,7 @@ Artifact:
       CodeRepo:
         Platform: github
         Owner: LYH-RAIN
-        RepoName: aliyun-computenest/quickstart-copaw
+        RepoName: aliyun-computenest/quickstart-qwen-code
         Branch: main
       RegionId: ap-southeast-1
       CommandType: RunShellScript
