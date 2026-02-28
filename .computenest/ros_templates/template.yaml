@@ -171,6 +171,9 @@ Parameters:
       en: Zone ID
       zh-cn: 可用区ID
     AssociationProperty: ALIYUN::ECS::Instance::ZoneId
+    AssociationPropertyMetadata:
+      AutoSelectFirst: true
+      DefaultValueStrategy: first
   VpcId:
     Type: String
     Label:

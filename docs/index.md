@@ -20,8 +20,17 @@ CoPAW 是一款个人助理型产品，部署在你自己的环境中:
 4. 部署完成后获取访问地址：  
     ![image.png](1.jpg)
 
-5. 访问并使用服务：
+5. 访问服务：
     ![image.png](3.jpg)
+
+6. 配置百炼API_KEY（[获取百炼API_KEY](https://bailian.console.aliyun.com/cn-beijing/?tab=globalset#/efm/api_key)）:
+    ![image.png](4.jpg)
+
+7. 配置模型：
+    ![image.png](5.jpg)
+
+8. 开始对话：
+    ![image.png](6.jpg)
 
 ## 📚 使用指南
 
