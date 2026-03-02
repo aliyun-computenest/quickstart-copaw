@@ -56,4 +56,4 @@ CodingPlan_Base_Url： https://coding.dashscope.aliyuncs.com/v1
 
 ![image.png](9.jpg)
 
-添加模型并配置百炼 CodingPlan API KEY后开启对话。
+添加模型并配置[百炼 CodingPlan API KEY](https://bailian.console.aliyun.com/cn-beijing/?apiKey=1&tab=model#/efm/coding_plan)后开启对话。
