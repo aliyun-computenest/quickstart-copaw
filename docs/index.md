@@ -35,3 +35,25 @@ CoPAW 是一款个人助理型产品，部署在你自己的环境中:
 ## 📚 使用指南
 
 使用请参考 CoPaw [官方文档](https://copaw.agentscope.io/docs/intro) 了解完整功能。
+
+
+## ❓常见问题
+### 如何配置百炼其他模型
+设置>模型>添加提供商，输入服务商信息后点击创建：
+Base_Url： https://dashscope.aliyuncs.com/compatible-mode/v1
+
+![image.png](7.jpg)
+
+添加模型：
+
+![image.png](8.jpg)
+
+配置百炼API KEY后选择添加的模型即可对话。
+
+### 如何配置百炼CodingPlan
+设置>模型>添加提供商，输入服务商信息后点击创建：
+CodingPlan_Base_Url： https://coding.dashscope.aliyuncs.com/v1
+
+![image.png](9.jpg)
+
+添加模型并配置百炼 CodingPlan API KEY后开启对话。
