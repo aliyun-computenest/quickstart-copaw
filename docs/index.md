@@ -36,6 +36,12 @@ CoPAW 是一款个人助理型产品，部署在你自己的环境中:
 
 使用请参考 CoPaw [官方文档](https://copaw.agentscope.io/docs/intro) 了解完整功能。
 
+## 问题反馈
+
+遇到软件的Bug，可通过以下方式联系解决。
+    ![image.png](10.jpg)
+
+
 
 ## ❓常见问题
 ### 如何配置百炼其他模型
