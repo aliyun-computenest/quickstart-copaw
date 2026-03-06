@@ -62,4 +62,10 @@ CodingPlan_Base_Url： https://coding.dashscope.aliyuncs.com/v1
 
 ![image.png](9.jpg)
 
+
+### 子账号访问服务报错InternalError
+![image.png](11.png)
+
+需要用户给子账号添加AliyunROSReadOnlyAccess，AliyunECSReadOnlyAccess，AliyunVPCReadOnlyAccess权限
+
 添加模型并配置[百炼 CodingPlan API KEY](https://bailian.console.aliyun.com/cn-beijing/?apiKey=1&tab=model#/efm/coding_plan)后开启对话。
