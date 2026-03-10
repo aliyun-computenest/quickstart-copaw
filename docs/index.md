@@ -57,10 +57,8 @@ Base_Url： https://dashscope.aliyuncs.com/compatible-mode/v1
 配置百炼API KEY后选择添加的模型即可对话。
 
 ### 如何配置百炼CodingPlan
-设置>模型>添加提供商，输入服务商信息后点击创建：
-CodingPlan_Base_Url： https://coding.dashscope.aliyuncs.com/v1
-
-![image.png](9.jpg)
+设置>模型>Aliyun CodingPlan ,输入相应的ak和模型信息后点击创建：
+![img.png](img.png)
 
 
 ### 子账号访问服务报错InternalError
