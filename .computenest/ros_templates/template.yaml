@@ -143,6 +143,24 @@ Parameters:
         InstanceTypeFamily:
           - ecs.u1
           - ecs.e
+          - ecs.u2a
+          - ecs.u2i
+    AllowedValues:
+      - ecs.e-c1m1.large
+      - ecs.e-c1m2.large
+      - ecs.e-c1m1.xlarge
+      - ecs.e-c1m2.xlarge
+      - ecs.u2a-c1m2.xlarge
+      - ecs.u2i-c1m1.large
+      - ecs.u2i-c1m2.large
+      - ecs.u2i-c1m4.large
+      - ecs.u2i-c1m8.large
+      - ecs.u2i-c1m1.xlarge
+      - ecs.u2i-c1m2.xlarge
+      - ecs.u2i-c1m4.xlarge
+      - ecs.u2i-c1m8.xlarge
+      - ecs.u2i-c1m1.2xlarge
+      - ecs.u2i-c1m2.2xlarge
   InstancePassword:
     NoEcho: true
     Type: String
@@ -253,7 +271,7 @@ Resources:
           NicType: internet
         - PortRange: 8088/8088
           Priority: 1
-          SourceCidrIp: 0.0.0.0/0
+          SourceCidrIp: 100.104.0.0/16
           IpProtocol: tcp
           NicType: internet
   InstanceGroup:

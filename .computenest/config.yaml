@@ -90,7 +90,7 @@ Artifact:
       CodeRepo:
         Platform: github
         Owner: LYH-RAIN
-        RepoName: aliyun-computenest/quickstart-qwen-code
+        RepoName: aliyun-computenest/quickstart-copaw
         Branch: main
       RegionId: ap-southeast-1
       CommandType: RunShellScript
@@ -108,8 +108,12 @@ Artifact:
 
         cd /root
         # Get the code
-        docker run -d --name copaw-app -p 8088:8088 --restart unless-stopped agentscope-registry.ap-southeast-1.cr.aliyuncs.com/agentscope/copaw:latest
-
+        docker run -d \
+          -p 8088:8088 \
+          --net host \
+          -v copaw-data:/app/working \
+          -v copaw-secrets:/app/working.secret \
+          agentscope-registry.ap-southeast-1.cr.aliyuncs.com/agentscope/copaw:latest
 
         set -euo pipefail  # 安全模式：出错即停、未定义变量报错、管道失败捕获
 
