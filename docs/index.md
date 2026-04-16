@@ -1,4 +1,4 @@
-# 🐾 CoPaw 服务简介
+# 🐾 QwenPaw 服务简介
 
 CoPAW 是一款个人助理型产品，部署在你自己的环境中:
     多通道对话 — 通过钉钉、飞书、QQ、Discord、iMessage 等与你对话。
@@ -10,7 +10,7 @@ CoPAW 是一款个人助理型产品，部署在你自己的环境中:
 ## 🚀 部署流程
 
 
-1. 访问计算巢 CoPaw 社区版 [部署链接](https://computenest.console.aliyun.com/service/instance/create/cn-hangzhou?type=user&ServiceId=service-1ed84201799f40879884)，按页面提示填写部署参数：  
+1. 访问计算巢 QwenPaw 社区版 [部署链接](https://computenest.console.aliyun.com/service/instance/create/cn-hangzhou?type=user&ServiceId=service-1ed84201799f40879884)，按页面提示填写部署参数：  
     ![image.png](2.jpg)
 
 2. 参数配置完成后，系统将自动生成**费用预估明细**。确认无误后点击 **下一步：确认订单**。
@@ -34,7 +34,7 @@ CoPAW 是一款个人助理型产品，部署在你自己的环境中:
 
 ## 📚 使用指南
 
-使用请参考 CoPaw [官方文档](https://copaw.agentscope.io/docs/intro) 了解完整功能。
+使用请参考 QwenPaw [官方文档](https://copaw.agentscope.io/docs/intro) 了解完整功能。
 
 ## 问题反馈
 
