@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="计算巢是阿里云开放给企业应用服务商的服务管理平台。服务商能够在计算巢上发布私有化部署服务，为其客户提供云上软件一键部署的能力；同时也支持全托管模式的服务，赋能服务商托管其客户资源。">
+  <title>🐾 QwenPaw 服务简介 - Aliyun 计算巢 x Demo</title>
+
+  <link rel="shortcut icon" href="img/favicon.ico">
+
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
+  <link rel="stylesheet" href="css/theme.css">
+  
+
+  
+
+  
+  
+
+  
+    <script src="search/main.js"></script>
+  
+
+  
+
+  <script src="js/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="nav">
+      <div class="nav-inner">
+        <div class="logo">
+          <img src="./img/logo-2x.png">
+        </div>
+        <div class="nav-list">
+          <ul>
+          
+              <li><a href="#qwenpaw">🐾 QwenPaw 服务简介</a></li>
+              
+                  <li><a href="#_1">🚀 部署流程</a></li>
+                  
+              
+                  <li><a href="#_2">📚 使用指南</a></li>
+                  
+              
+                  <li><a href="#_3">问题反馈</a></li>
+                  
+              
+                  <li><a href="#_4">❓常见问题</a></li>
+                  
+                      <li class="li-h3"><a href="#_5">如何配置百炼其他模型</a></li>
+                  
+                      <li class="li-h3"><a href="#codingplan">如何配置百炼CodingPlan</a></li>
+                  
+                      <li class="li-h3"><a href="#internalerror">子账号访问服务报错InternalError</a></li>
+                  
+              
+          
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="content theme-github">
+      
+      <div class="content-inner">        
+        
+        <h1 id="qwenpaw">🐾 QwenPaw 服务简介</h1>
+<p>QwenPaw 是一款个人助理型产品，部署在你自己的环境中:
+    多通道对话 — 通过钉钉、飞书、QQ、Discord、iMessage 等与你对话。
+    定时执行 — 按你的配置自动运行任务。
+    能力由 Skills 决定，有无限可能 — 内置定时任务、PDF 与表单、Word/Excel/PPT 文档处理、新闻摘要、文件阅读等，还可在 Skills 中自定义扩展。
+    数据全在本地 — 不依赖第三方托管。</p>
+<h2 id="_1">🚀 部署流程</h2>
+<ol>
+<li>
+<p>访问计算巢 QwenPaw 社区版 <a href="https://computenest.console.aliyun.com/service/instance/create/cn-hangzhou?type=user&amp;ServiceId=service-1ed84201799f40879884">部署链接</a>，按页面提示填写部署参数：<br />
+<img alt="image.png" src="2.jpg" /></p>
+</li>
+<li>
+<p>参数配置完成后，系统将自动生成<strong>费用预估明细</strong>。确认无误后点击 <strong>下一步：确认订单</strong>。</p>
+</li>
+<li>
+<p>在订单确认页，核对实例信息与费用，点击 <strong>立即创建</strong> 开始自动部署。</p>
+</li>
+<li>
+<p>部署完成后获取访问地址：<br />
+<img alt="image.png" src="1.jpg" /></p>
+</li>
+<li>
+<p>访问服务：
+    <img alt="image.png" src="3.jpg" /></p>
+</li>
+<li>
+<p>配置百炼API_KEY（<a href="https://bailian.console.aliyun.com/cn-beijing/?tab=globalset#/efm/api_key">获取百炼API_KEY</a>）:
+    <img alt="image.png" src="4.jpg" /></p>
+</li>
+<li>
+<p>配置模型：
+    <img alt="image.png" src="5.jpg" /></p>
+</li>
+<li>
+<p>开始对话：
+    <img alt="image.png" src="6.jpg" /></p>
+</li>
+</ol>
+<h2 id="_2">📚 使用指南</h2>
+<p>使用请参考 QwenPaw <a href="https://copaw.agentscope.io/docs/intro">官方文档</a> 了解完整功能。</p>
+<h2 id="_3">问题反馈</h2>
+<p>遇到软件的Bug，可通过以下方式联系解决。
+    <img alt="image.png" src="10.jpg" /></p>
+<h2 id="_4">❓常见问题</h2>
+<h3 id="_5">如何配置百炼其他模型</h3>
+<p>设置&gt;模型&gt;添加提供商，输入服务商信息后点击创建：
+Base_Url： https://dashscope.aliyuncs.com/compatible-mode/v1</p>
+<p><img alt="image.png" src="7.jpg" /></p>
+<p>添加模型：</p>
+<p><img alt="image.png" src="8.jpg" /></p>
+<p>配置百炼API KEY后选择添加的模型即可对话。</p>
+<h3 id="codingplan">如何配置百炼CodingPlan</h3>
+<p>设置&gt;模型&gt;Aliyun CodingPlan ,输入相应的ak和模型信息后点击创建：
+<img alt="img.png" src="img.png" /></p>
+<h3 id="internalerror">子账号访问服务报错InternalError</h3>
+<p><img alt="image.png" src="11.png" /></p>
+<p>需要用户给子账号添加AliyunROSReadOnlyAccess，AliyunECSReadOnlyAccess，AliyunVPCReadOnlyAccess权限</p>
+<p>添加模型并配置<a href="https://bailian.console.aliyun.com/cn-beijing/?apiKey=1&amp;tab=model#/efm/coding_plan">百炼 CodingPlan API KEY</a>后开启对话。</p>
+        
+      </div>
+
+      <div class="copyrights">© 2009-2022 Aliyun.com 版权所有</div>
+    </div>
+  </div>
+  
+  <!--
+  MkDocs version      : 1.6.1
+  Docs Build Date UTC : 2026-08-27 08:18:11.200778+00:00
+  -->
+</body>
+</html>
